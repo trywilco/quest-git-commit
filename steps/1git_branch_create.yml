@@ -1,6 +1,6 @@
-id: git_commit
+id: 1git_branch_create
 learningObjectives: 
-- Create a new branch
+- Create a new branch on Github
 hints:
 startFlow:
   do:
@@ -23,26 +23,15 @@ startFlow:
 trigger:
   type: user_message
   flowNode:
-    if:
-      conditions:
-      - conditionId: text_contains_strings
-        params:
-          defaultResult: false
-          fileName: CODEOWNERS
-      then:
-        do:
-        - actionId: bot_message
-          params:
-            person: lucca
-            messages:
-            - text: "Perfect execution! Well done. Your new branch is "
-              delay: 1500
-        - actionId: finish_step
-      else:
-        do:
-        - actionId: bot_message
-          params:
-            person: lucca
-            messages:
-            - text: "Hmm, are you certain thats the branch name? head over to your [Github repository branches](${user.repository}/branches) and copy the name"
-              delay: 2500
+    do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+        - text: "Perfect execution! Well done. Your new branch is [Github repository here](${user.repository}/tree/${userMessageText})"
+          delay: 1500
+    - actionId: store_user_property
+      params:
+        name: branchname
+        value: ${userMessageText}
+    - actionId: finish_step

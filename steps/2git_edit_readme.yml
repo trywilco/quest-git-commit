@@ -1,0 +1,50 @@
+id: 2git_edit_readme
+learningObjectives: 
+- Edit a file and commit it
+hints:
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: lucca
+      messages:
+      - text: "Now that we created a new branch we're ready to change some files!"
+      - text: "Theres a README.md file in your repository that needs some editing. Copy the text below and paste it in file." 
+      - text: |
+          ```
+            # Congrats on your new readme file! 
+            ![Alt text](https://i.giphy.com/L0O3TQpp0WnSXmxV8p.gif)
+            # [Ready for more?](https://app.wilco.gg)
+          ```      
+      - text: ":instruction[[Edit the Readme file and copy/paste the text](${user.repository}/edit/${user.properties.branchname}/README.md)]"
+  - actionId: bot_message
+    params:
+      person: lucca
+      messages:
+      - text: "Once you are done editing, :instruction[Click Commit Changes]"
+      - text: "I'll check when you have commited the change so we can move forward."
+trigger:
+  type: github_push
+  flowNode:
+    if:
+      conditions:
+      - conditionId: github_is_file_modified
+        params:
+          fileName: README.md
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: lucca
+            messages:
+            - text: "Perfect execution! Well done. You've commited your first change! Does it feel great?"
+              delay: 1500
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: lucca
+            messages:
+            - text: "Hmm, I see you pushed some changes to a new branch, but it seems **you forgot to edit the `README.md` file**"
+              delay: 2500

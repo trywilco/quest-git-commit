@@ -7,7 +7,6 @@ summary: "Congratulations! You've learned how to commit changes to a Git reposit
 steps:
 - 1git_branch_create
 - 2git_edit_readme
-- 3git_commit_file
 duration: 0.5
 skills:
 - git
