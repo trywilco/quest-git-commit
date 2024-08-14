@@ -18,8 +18,8 @@ startFlow:
       person: lucca
       messages:
       - text: "Go create a new branch in your [Github repository here](${user.repository}/branches)"
-      - text: "Click on the top right green button named 'New Branch', after creating click on the copy icon next to it to copy its name."
-      - text: ":instruction[When done tell me the name of your branch]"
+      - text: "Click on the top right green button named 'New Branch'. After creating the branch, click on the copy icon next to it to copy its name."
+      - text: ":instruction[Tell me the name of your branch when you're done]"
 trigger:
   type: user_message
   flowNode:

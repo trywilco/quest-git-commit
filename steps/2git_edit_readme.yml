@@ -1,6 +1,6 @@
 id: 2git_edit_readme
 learningObjectives: 
-- Edit a file and commit it
+- Commit git changes
 hints:
 startFlow:
   do:
@@ -8,7 +8,7 @@ startFlow:
     params:
       person: lucca
       messages:
-      - text: "Now that we created a new branch we're ready to change some files!"
+      - text: "Now that we've created a new branch we're ready to change some files!"
       - text: "We need a README.md file in your repository with some content. Copy the text below and paste it in the newly created file." 
       - text: |
           ```
@@ -21,7 +21,7 @@ startFlow:
     params:
       person: lucca
       messages:
-      - text: "Once you are done editing, :instruction[Click Commit Changes]"
+      - text: "Once you are done editing, :instruction[click Commit Changes]"
       - text: "I'll check when you have commited the change so we can move forward."
 trigger:
   type: github_push
