@@ -9,14 +9,14 @@ startFlow:
       person: lucca
       messages:
       - text: "Now that we created a new branch we're ready to change some files!"
-      - text: "Theres a README.md file in your repository that needs some editing. Copy the text below and paste it in file." 
+      - text: "We need a README.md file in your repository with some content. Copy the text below and paste it in the newly created file." 
       - text: |
           ```
             # Congrats on your new readme file! 
             ![Alt text](https://i.giphy.com/L0O3TQpp0WnSXmxV8p.gif)
             # [Lets go!](https://app.wilco.gg/chat/lucca)
-          ```      
-      - text: ":instruction[[Edit the Readme file and copy/paste the text](${user.repository}/edit/${user.properties.branchname}/README.md)]"
+          ```
+      - text: ":instruction[[Create a Readme file and copy/paste the text](${user.repository}/new/${user.properties.branchname}/?filename=README.md)]"
   - actionId: bot_message
     params:
       person: lucca
@@ -28,8 +28,9 @@ trigger:
   flowNode:
     if:
       conditions:
-      - conditionId: github_is_file_modified
+      - conditionId: github_is_file_added_in_push
         params:
+          defaultResult: false
           fileName: README.md
       then:
         do:
