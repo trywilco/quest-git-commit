@@ -1,0 +1,48 @@
+id: git_commit
+learningObjectives: 
+- Create a new branch
+hints:
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: lucca
+      messages:
+      - text: "Welcome to the world of Github! Let's get started! 🚀"
+      - text: "Today We will learn how to edit and commit changes to your Github repository." 
+      - text: "First of all, we want to create a branch in your Github repository."
+      - text: "In Git, branches are a part of your everyday development process. Git branches are effectively a pointer to a snapshot of your changes."
+      - text: "When you want to add a new feature or fix a bug you spawn a new branch to encapsulate your changes."
+  - actionId: bot_message
+    params:
+      person: lucca
+      messages:
+      - text: "Go create a new branch in your [Github repository here](${user.repository}/branches)"
+      - text: "Click on the top right green button named 'New Branch', after creating click on the copy icon next to it to copy its name."
+      - text: "":instruction[When done tell me the name of your branch]"
+trigger:
+  type: user_message
+  flowNode:
+    if:
+      conditions:
+      - conditionId: text_contains_strings
+        params:
+          defaultResult: false
+          fileName: CODEOWNERS
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: lucca
+            messages:
+            - text: "Perfect execution! Well done. Your new branch is "
+              delay: 1500
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: lucca
+            messages:
+            - text: "Hmm, are you certain thats the branch name? head over to your [Github repository branches](${user.repository}/branches) and copy the name"
+              delay: 2500
