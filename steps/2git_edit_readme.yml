@@ -14,7 +14,7 @@ startFlow:
           ```
             # Congrats on your new readme file! 
             ![Alt text](https://i.giphy.com/L0O3TQpp0WnSXmxV8p.gif)
-            # [Ready for more?](https://app.wilco.gg)
+            # [Lets go!](https://app.wilco.gg/chat/lucca)
           ```      
       - text: ":instruction[[Edit the Readme file and copy/paste the text](${user.repository}/edit/${user.properties.branchname}/README.md)]"
   - actionId: bot_message
