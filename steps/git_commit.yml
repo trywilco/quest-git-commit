@@ -11,12 +11,12 @@ startFlow:
     params:
       person: lucca
       messages:
-      - text: "Let's get started! 🚀 we will learn how to commit changes to a Git repository."
-      - text: We created a new Codespace development environment for you to use, equipped with everything you need, :codeInstruction[[let's open it](${platform.baseUrl}/my-codespace)] or click on the link from your Wilco Chat side menu.
-      - text: "We will **add a `CODEOWNERS` file** that we are missing in our repository."
-      - text: "This file let everyone know who is responsible for the code and who should be reviewing changes."
-      - text: "Create a new file called `CODEOWNERS` in the root directory and add your github username to it. For example, `@your-username`."
-      - text: ":instruction[Please create **a new branch**,  **commit the change**  and **push it** to GitHub.]"
+      - text: "Let's get started! 🚀 We will learn how to commit changes to a Git repository."
+      - text: "We have created a new Codespace development environment for you, equipped with everything you need. :codeInstruction[[Open it here](${platform.baseUrl}/my-codespace)] or click on the link from your Wilco Chat side menu."
+      - text: "We will **add a `CODEOWNERS` file** that is missing from our repository."
+      - text: "This file lets everyone know who is responsible for the code and who should review changes."
+      - text: "Create a new file called `CODEOWNERS` in the root directory and add your GitHub username to it. For example, `@your-username`."
+      - text: ":instruction[Please create **a new branch**, **commit the change**, and **push it** to GitHub.]"
 trigger:
   type: github_push
   flowNode:
