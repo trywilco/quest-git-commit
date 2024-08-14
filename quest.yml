@@ -1,0 +1,21 @@
+id: git_commit
+title: Git Commit
+subtitle: "Learn how to commit changes to a Git repository"
+level: beginner
+description: "In this quest, you'll learn how to commit changes to a Git repository."
+summary: "Congratulations! You've learned how to commit changes to a Git repository."
+steps:
+- git_commit
+duration: 0.5
+skills:
+- git
+- github
+repository: https://github.com/trywilco/copilot-node-calculator
+frameworks:
+  backend: null
+messages:
+  questFinished:
+    person: lucca
+    messages:
+    - text: "Great job! You've completed the Git Commit quest. You're on your way to becoming a Git expert!"
+      delay: 1700

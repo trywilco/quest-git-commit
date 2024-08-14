@@ -1,0 +1,57 @@
+id: git_commit
+learningObjectives: 
+- Adding a File to a Git Repository
+hints:
+- Use `git branch` to create a new branch and git checkout to switch branches
+- Use `git add` to add files and `git commit` to commit those changes
+- Use `git push` to push your changes to the remote branch
+startFlow:
+  do:
+  - actionId: bot_message
+    params:
+      person: lucca
+      messages:
+      - text: "Let's get started! 🚀 we will learn how to commit changes to a Git repository."
+      - text: We created a new Codespace development environment for you to use, equipped with everything you need, :codeInstruction[[let's open it](${platform.baseUrl}/my-codespace)] or click on the link from your Wilco Chat side menu.
+      - text: "We will **add a `CODEOWNERS` file** that we are missing in our repository."
+      - text: "This file let everyone know who is responsible for the code and who should be reviewing changes."
+      - text: "Create a new file called `CODEOWNERS` in the root directory and add your github username to it. For example, `@your-username`."
+      - text: ":instruction[Please create **a new branch**,  **commit the change**  and **push it** to GitHub.]"
+trigger:
+  type: github_push
+  flowNode:
+    if:
+      conditions:
+      - conditionId: github_is_file_added_in_push
+        params:
+          defaultResult: false
+          fileName: CODEOWNERS
+      then:
+        do:
+        - actionId: bot_message
+          params:
+            person: lucca
+            messages:
+            - text: "Perfect execution! Well done."
+              delay: 1500
+        - actionId: finish_step
+      else:
+        do:
+        - actionId: bot_message
+          params:
+            person: lucca
+            messages:
+            - text: "Hmm, I see you pushed some changes to a new branch, but it seems **you forgot to add the `CODEOWNERS` file** I sent you. Could you please add it to the repo, commit, and **push it to Github**?"
+              delay: 2500
+solution:
+  do:
+  - actionId: bot_message
+    params:
+      person: lucca
+      messages:
+        - text: "According to the requirement you need first to create a new branch to the Git repository. You can do it by using `git switch -c <branch_name>` command."
+        - text: "Now create the actual CODEOWNERS file under the root directory of your local Git repository."
+        - text: "After that you need to stage the file in the Git repository by using `git add <file_name>` command."
+        - text: "In any case, you can always check the status of your Git repository by using `git status` command."
+        - text: "After staging the file you need to commit the changes by using `git commit <file> -m <commit_message>` command."
+        - text: "Finally you need to push the changes to the remote branch. You can do it by using `git push --set-upstream origin <branch_name>` command."
