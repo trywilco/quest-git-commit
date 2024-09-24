@@ -41,7 +41,7 @@ trigger:
           params:
             person: lucca
             messages:
-            - text: "Hmm, I see you pushed some changes to a new branch, but it seems **you forgot to add the `CODEOWNERS` file** I sent you. Could you please add it to the repo, commit, and **push it to Github**?"
+            - text: "Hmm, I see you pushed some changes to a new branch, but it seems **you forgot to add the `CODEOWNERS` file** I sent you. Could you please add it to the repo, commit, and **push it to GitHub**?"
               delay: 2500
 solution:
   do:
