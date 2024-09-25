@@ -8,21 +8,21 @@ startFlow:
     params:
       person: lucca
       messages:
-      - text: "Now that we've created a new branch we're ready to change some files!"
-      - text: "We need a README.md file in your repository with some content. Copy the text below and paste it in the newly created file." 
+      - text: "Now that we've created a new branch, we're ready to change some files!"
+      - text: "We need a README.md file in your repository with some content. Copy the text below and paste it into the newly created file." 
       - text: |
           ```
-            # Congrats on your new readme file! 
+            # Congrats on your new README file! 
             ![Alt text](https://i.giphy.com/L0O3TQpp0WnSXmxV8p.gif)
-            # [Lets go!](https://app.wilco.gg/chat/lucca)
+            # [Let's go!](https://app.wilco.gg/chat/lucca)
           ```
-      - text: ":instruction[[Create a Readme file and copy/paste the text](${user.repository}/new/${user.properties.branchname}/?filename=README.md)]"
+      - text: ":instruction[[Create a README file and copy/paste the text](${user.repository}/new/${user.properties.branchname}/?filename=README.md)]"
   - actionId: bot_message
     params:
       person: lucca
       messages:
       - text: "Once you are done editing, :instruction[click Commit Changes]"
-      - text: "I'll check when you have commited the change so we can move forward."
+      - text: "I'll check when you have committed the change so we can move forward."
 trigger:
   type: github_push
   flowNode:
@@ -38,7 +38,7 @@ trigger:
           params:
             person: lucca
             messages:
-            - text: "Perfect execution! Well done. You've commited your first change! Does it feel great?"
+            - text: "Perfect execution! Well done. You've committed your first change! Does it feel great?"
               delay: 1500
         - actionId: finish_step
       else:

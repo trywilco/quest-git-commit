@@ -2,7 +2,7 @@ id: git_commit
 title: Git Commit
 subtitle: "Learn how to edit and commit changes to your GitHub repository"
 level: beginner
-description: "In this quest, you'll learn what are branches, and how to edit a file and commit changes to your GitHub repository."
+description: "In this quest, you'll learn about branches, and how to edit a file and commit changes to your GitHub repository."
 summary: "Congratulations! You've learned how to commit changes to a Git repository."
 steps:
 - 1git_branch_create

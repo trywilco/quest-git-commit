@@ -9,17 +9,17 @@ startFlow:
       person: lucca
       messages:
       - text: "Welcome to the world of GitHub! Let's get started! 🚀"
-      - text: "Today We will learn how to edit and commit changes to your GitHub repository." 
+      - text: "Today we will learn how to edit and commit changes to your GitHub repository." 
       - text: "First of all, we want to create a branch in your GitHub repository."
       - text: "In Git, branches are a part of your everyday development process. Git branches are effectively a pointer to a snapshot of your changes."
-      - text: "When you want to add a new feature or fix a bug you spawn a new branch to encapsulate your changes."
+      - text: "When you want to add a new feature or fix a bug, you spawn a new branch to encapsulate your changes."
   - actionId: bot_message
     params:
       person: lucca
       messages:
-      - text: "Go create a new branch in your [GitHub repository here](${user.repository}/branches)"
+      - text: "Go create a new branch in your [GitHub repository here](${user.repository}/branches)."
       - text: "Click on the top right green button named 'New Branch'. After creating the branch, click on the copy icon next to it to copy its name."
-      - text: ":instruction[Tell me the name of your branch when you're done]"
+      - text: ":instruction[Tell me the name of your branch when you're done.]"
 trigger:
   type: user_message
   flowNode:
@@ -28,7 +28,7 @@ trigger:
       params:
         person: lucca
         messages:
-        - text: "Perfect execution! Well done. Your new branch is [GitHub repository here](${user.repository}/tree/${userMessageText})"
+        - text: "Perfect execution! Well done. Your new branch is [here](${user.repository}/tree/${userMessageText})."
           delay: 1500
     - actionId: store_user_property
       params:
