@@ -16,6 +16,7 @@ startFlow:
             ![Alt text](https://i.giphy.com/L0O3TQpp0WnSXmxV8p.gif)
             # [Let's go!](https://app.wilco.gg/chat/lucca)
           ```
+      - text: "![](${newreadmefile.png})"
       - text: ":instruction[[Create a README file and copy/paste the text](${user.repository}/new/${user.properties.branchname}/?filename=README.md)]"
   - actionId: bot_message
     params:
