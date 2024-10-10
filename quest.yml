@@ -14,6 +14,7 @@ skills:
 repository: https://github.com/trywilco/git-quest-commit-repo
 frameworks:
   backend: null
+disableCodespaces: true
 messages:
   questFinished:
     person: lucca
