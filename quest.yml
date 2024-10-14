@@ -21,3 +21,9 @@ messages:
     messages:
     - text: "Great job! You've completed the Git Commit quest. You're on your way to becoming a Git expert!"
       delay: 1700
+
+sidebarTools:
+  - name: GitHub Universe FAQ
+    link: https://trywilco.notion.site/GitHub-Universe-FAQ-11ac0eacc16280cca15de0b1518fa087
+    icon: faq-icon.svg
+
