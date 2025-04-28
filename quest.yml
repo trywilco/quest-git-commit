@@ -23,7 +23,7 @@ messages:
       delay: 1700
 
 sidebarTools:
-  - name: GitHub Universe FAQ
+  - name: GitHub Quests FAQ
     link: https://trywilco.notion.site/GitHub-Universe-FAQ-11ac0eacc16280cca15de0b1518fa087
     icon: faq-icon.svg
 
