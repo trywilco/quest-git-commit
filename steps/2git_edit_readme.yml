@@ -40,7 +40,13 @@ trigger:
             person: lucca
             messages:
             - text: "Perfect execution! Well done. You've committed your first change! Does it feel great?"
-              delay: 1500
+        - actionId: bot_message
+          params:
+            person: lucca
+            messages:
+            - text: "You've just learned how to create a branch, add a README.md, and commit changes—great start!"
+            - text: "Next, learn how to collaborate using pull requests. It's the key to sharing code, getting feedback, and merging updates safely."
+            - text: "👉 Check out the \"Pull Requests\" module on [GitHub Skills](https://github.com/skills/review-pull-requests/) to practice proposing changes and collaborating like a pro."
         - actionId: finish_step
       else:
         do:
